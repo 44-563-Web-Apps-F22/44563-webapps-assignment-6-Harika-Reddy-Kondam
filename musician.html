@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <title>Javascript Program</title>
+<body>
+
+<h2>Musician guess by Harika Reddy Kondam</h2>
+
+<form>
+
+    <label for="form1_name">Enter the secret musician name </label>
+    <input type ="password" id="form1_name" name="form1_name" min=10 max=50 step=2 value="John Lennon"> <br>
+    <label for="form1_guess">Guess the musician </label>
+    <input type ="text" id="form1_guess" name="form1_guess" autofocus> <br>
+    <input type="button" onclick="checkGuess()" value="Check the guess">
+
+</form>
+
+
+<p id="result">This text will be replaced </p>
+
+<script>
+
+    let wrong = 0;
+
+    let correct = 0;
+
+function checkGuess(){
+
+console.log("Getting form values")
+
+name = document.getElementById("form1_name").value
+
+guess = document.getElementById("form1_guess").value
+
+   
+
+out = document.getElementById("result")
+
+if(name==guess){
+
+    alert("You got it right")
+
+    correct=correct+1
+
+    out.innerHTML = "correct: " + correct + " " + "wrong: " + wrong
+
+} else {
+
+    alert("Wrong Musician")
+
+    wrong=wrong+1
+
+    out.innerHTML = "correct: " + correct + " " + "wrong: " + wrong
+
+}
+
+}
+
+</script>
+
+</body>
+</html> 
