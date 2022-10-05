@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <title>Calculate Discount</title>
+<body>
+
+<h2>Harika Reddy Kondam computes discounts </h2>
+
+<form>
+    <label for="form1_kamount">Enter base amount</label>
+    <input type ="number" id="form1_kamount" name="form1_kamount" min=10 max=50 step=2 value="20"> <br>
+
+    <label for="form1_kdiscount">Enter the discount percentage</label>
+    <input type ="number" id="form1_kdiscount" name="form1_kdiscount" value="10"> <br>
+
+    <input type="button" onclick="discount()" value="Apply discount">
+</form>
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+function discount(){
+    console.log("Getting form values")
+    amount = document.getElementById("form1_kamount").value
+    disc = document.getElementById("form1_kdiscount").value
+    base = amount -((disc/100)*amount)
+    console.log(base)
+    let result = "" 
+    for(let i=1;i<=5;i++){
+        result=result + " " + i*base;
+        
+    }
+
+    document.getElementById("result").innerHTML = "Discounted amounts for base "+amount+" are: "+result     
+}
+</script>
+
+</body>
+</html> 
