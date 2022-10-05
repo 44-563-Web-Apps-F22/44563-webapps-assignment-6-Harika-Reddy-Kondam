@@ -23,7 +23,28 @@
 
 <p id="checkResult">This text will be replaced </p>
 
+<form>
+    <label for="form1_city">Enter a city</label>
+    <input type ="text" id="form1_city" name="form1_city" min=10 max=50 step=2 value=city> <br>
+
+    <label for="form1_price">Enter price </label>
+    <input type ="text" id="form1_price" name="form1_price" autofocus> <br>
+
+    <input type="button" onclick="updateVacation()" value="Update the vacation">
+</form>
+
 <script> 
+
+function updateVacation(){
+    console.log("Getting form values")
+    city = document.getElementById("form1_city").value
+    price = document.getElementById("form1_price").value
+    my_vacation['city'] = city
+    my_vacation['price'] = price
+    document.getElementById("checkResult").innerHTML = JSON.stringify(my_vacation)
+    
+}
+
 let my_vacation={}
 
 function selectVacation(){
