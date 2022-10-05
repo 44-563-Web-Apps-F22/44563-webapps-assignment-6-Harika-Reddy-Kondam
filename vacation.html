@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <title>check boxes </title>
+<body>
+
+<h2>Kondam Harika Reddy selects a vacation</h2>
+
+<form>
+    <input type="checkbox" id="cb1_air" name="travel1"   
+      value="True" checked>
+    <label for="cb1_air">Travel by Air</label></br>
+  
+    <input type="checkbox" id="cb2_domestic" name="travel2" 
+       value="True">
+    <label for="cb2_domestic">Domestic</label></br>
+  
+    <input type="checkbox" id="cb3_resort" name="travel3"   
+       value="False" checked>
+    <label for="cb3_resort">Resort</label></br>
+
+    <input type="button" onclick="selectVacation()" value="Select a vacation">
+</form>
+
+<p id="checkResult">This text will be replaced </p>
+
+<script> 
+let my_vacation={}
+
+function selectVacation(){
+
+    air = document.getElementById("cb1_air").checked
+    domestic = document.getElementById("cb2_domestic").checked 
+    resort = document.getElementById("cb3_resort").checked
+
+    if(air) {
+        my_vacation['air'] = true
+    } else {
+        my_vacation['air'] = false
+    }
+
+    if(domestic) {
+        my_vacation['domestic'] = true
+    } else {
+        my_vacation['domestic'] = false
+    }
+
+    if(resort) {
+        my_vacation['resort'] = true
+    } else {
+        my_vacation['resort'] = false
+    }
+
+    document.getElementById("checkResult").innerHTML = JSON.stringify(my_vacation)
+}
+</script>
+
+</body>
+</html> 
