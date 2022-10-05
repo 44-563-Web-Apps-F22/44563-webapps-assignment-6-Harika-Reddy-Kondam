@@ -18,6 +18,10 @@
 
 <p id="result">This text will be replaced </p>
 
+<div class="container">
+    <img src="Mosquito.jpg" alt="Mosquito" id="image" height="100" width="100" onclick="swapImage()">
+</div>
+
 <script>
     let wrong = 0;
     let correct = 0;
@@ -39,6 +43,27 @@ if(name==guess){
     out.innerHTML = "correct: " + correct + " " + "wrong: " + wrong
 
 }
+}
+let usingImage = 1;
+
+function swapImage(){
+    image = document.getElementById("image")
+    switch (usingImage) {
+                    case 1:
+                        image.src = "Mosquito.jpg"
+                        usingImage = usingImage + 1
+                        break
+                    case 2:
+                        image.src = "dobsonflies.jpg"
+                        usingImage = usingImage + 1
+                        break
+                    case 3:
+                        image.src = "alderfly.jpg"
+                        usingImage = usingImage + 1
+                        break
+                    default:
+                        break
+                }
 }
 </script>
 </body>
