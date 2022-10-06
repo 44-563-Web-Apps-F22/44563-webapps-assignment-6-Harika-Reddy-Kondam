@@ -1,22 +1,36 @@
 <!DOCTYPE html>
 <html>
-    <title>Javascript Program</title>
+    <head>
+        <title>Javascript Program</title>
+        <title>JavaScript</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"   
+            integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script> 
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" 
+            integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
+    </head>
 <body>
 
-<h2>Musician guess by Harika Reddy Kondam</h2>
+<h2 style="margin-left:1cm ;">Musician guess by Harika Reddy Kondam</h2>
 
-<form>
+<div class="container">
+    <form>
 
-    <label for="form1_name">Enter the secret musician name </label>
-    <input type ="password" id="form1_name" name="form1_name" min=10 max=50 step=2 value="John Lennon"> <br>
-    <label for="form1_guess">Guess the musician </label>
-    <input type ="text" id="form1_guess" name="form1_guess" autofocus> <br>
-    <input type="button" onclick="checkGuess()" value="Check the guess">
-
-</form>
-
-
-<p id="result">This text will be replaced </p>
+        <label for="form1_name">Enter the secret musician name </label>
+        <input type ="password" id="form1_name" name="form1_name" min=10 max=50 step=2 value="John Lennon"> 
+        <br>
+        <br>
+        <label for="form1_guess">Guess the musician </label>
+        <input type ="text" id="form1_guess" name="form1_guess" autofocus> 
+        <br>
+        <br>
+        <input type="button" class="btn btn-primary" onclick="checkGuess()" value="Check the guess">
+    
+    </form>
+    <br>
+    <p id="result">This text will be replaced </p>
+</div>
 
 <div class="container">
     <img src="Mosquito.jpg" alt="Mosquito" id="image" height="100" width="100" onclick="swapImage()">
@@ -43,7 +57,15 @@ if(name==guess){
     out.innerHTML = "correct: " + correct + " " + "wrong: " + wrong
 
 }
+if(wrong>=3){
+        incorrectGuess()
+    }
 }
+
+function incorrectGuess(){
+    alert("Sorry, game over")
+}
+
 let usingImage = 1;
 
 function swapImage(){
