@@ -1,37 +1,51 @@
 <!DOCTYPE html>
 <html>
-    <title>check boxes </title>
+    <head>
+        <title>check boxes </title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"   
+            integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script> 
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" 
+            integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
+    </head>
 <body>
 
 <h2>Kondam Harika Reddy selects a vacation</h2>
 
-<form>
-    <input type="checkbox" id="cb1_air" name="travel1"   
-      value="True" checked>
-    <label for="cb1_air">Travel by Air</label></br>
-  
-    <input type="checkbox" id="cb2_domestic" name="travel2" 
-       value="True">
-    <label for="cb2_domestic">Domestic</label></br>
-  
-    <input type="checkbox" id="cb3_resort" name="travel3"   
-       value="False" checked>
-    <label for="cb3_resort">Resort</label></br>
+<div class="container border border-primary">
+    <form>
+        <input type="checkbox" id="cb1_air" name="travel1"   
+          value="True" checked>
+        <label for="cb1_air">Travel by Air</label></br>
+      
+        <input type="checkbox" id="cb2_domestic" name="travel2" 
+           value="True">
+        <label for="cb2_domestic">Domestic</label></br>
+      
+        <input type="checkbox" id="cb3_resort" name="travel3"   
+           value="False" checked>
+        <label for="cb3_resort">Resort</label></br>
+    
+        <input type="button" class="btn btn-outline-success" onclick="selectVacation()" value="Select a vacation">
+    </form>
+</div>
 
-    <input type="button" onclick="selectVacation()" value="Select a vacation">
-</form>
+<div class="container border border-warning">
+    <p id="checkResult">This text will be replaced </p>
+</div>
 
-<p id="checkResult">This text will be replaced </p>
-
-<form>
-    <label for="form1_city">Enter a city</label>
-    <input type ="text" id="form1_city" name="form1_city" min=10 max=50 step=2 value=city> <br>
-
-    <label for="form1_price">Enter price </label>
-    <input type ="text" id="form1_price" name="form1_price" autofocus> <br>
-
-    <input type="button" class="btn btn-outline-warning" onclick="updateVacation()" value="Update the vacation">
-</form>
+<div class="container border border-danger">
+    <form>
+        <label for="form1_city">Enter a city</label>
+        <input type ="text" id="form1_city" name="form1_city" min=10 max=50 step=2 value=city> <br>
+    
+        <label for="form1_price">Enter price </label>
+        <input type ="text" id="form1_price" name="form1_price" autofocus> <br>
+    
+        <input type="button" class="btn btn-outline-warning" onclick="updateVacation()" value="Update the vacation">
+    </form>
+</div>
 
 
 <script> 
